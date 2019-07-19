@@ -18,8 +18,6 @@ const (
 func main() {
 	iface := flag.String("i", "", "the network interface to collect packet")
 	port := flag.String("p", "53", "dns listen port")
-	request := flag.Bool("request", true, "request dns packets anylize")
-	response := flag.Bool("response", true, "response dns packets anylize")
 	protocal := flag.String("P", "udp", "tcp or udp protocal")
 	metricHost := flag.String("http.host", "0.0.0.0:11011", "metrics server http port")
 	metricsPath := flag.String("http.path", "/metrics", "metrics server url path")
@@ -36,8 +34,6 @@ func main() {
 		*iface,
 		*protocal,
 		*port,
-		*request,
-		*response,
 		*metricHost,
 		*metricsPath,
 	)

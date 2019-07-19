@@ -9,20 +9,17 @@ type Config struct {
 	protocal    string
 	metricsPath string
 	metricsHost string
-	request     bool
-	response    bool
+	server      bool
 }
 
 // NewConfig create a new config and do basic validation
-func NewConfig(iface string, protocal string, port string, request bool, response bool, metricsHost string, metricsPath string) (*Config, error) {
+func NewConfig(iface string, protocal string, port string, metricsHost string, metricsPath string) (*Config, error) {
 	config := &Config{
 		iface:       iface,
 		port:        port,
 		protocal:    protocal,
 		metricsHost: metricsHost,
 		metricsPath: metricsPath,
-		request:     request,
-		response:    response,
 	}
 	if err := config.validate(); err != nil {
 		return nil, err
